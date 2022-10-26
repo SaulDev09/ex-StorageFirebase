@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-4">
+        <h3>Select files</h3>
+        <div appNgDropFiles [files]="files" (mouseOver)="isOverElement = $event"
+            [ngClass]="{'file-over': isOverElement}" class="well drop-zone">
+            <h4>Drop here the files</h4>
+            <img src="assets/drop-images.png">
+        </div>
+        <!-- <div>PRS01</div>
+        <div>
+            <input type="file" (change)="uploadFile($event)">
+        </div> -->
+    </div>
+    <div class="col-md-8">
+        <h4>Load images</h4>
+        <button (click)="onLoadImages()" [disabled]="files.length == 0" class="btn btn-success">Load to
+            Firebase</button>
+        <button (click)="onClearImages()" class="btn btn-danger">Clear</button>
+
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>File Name</th>
+                    <th>Size</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of files">
+                    <td [ngClass]="{'text-green': item.progress >= 100}">{{item.fileName}}</td>
+                    <td>{{item.file.size / 1024 / 1024 | number: '.2-2' }} MB</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="{'width': item.progress + '%'}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
