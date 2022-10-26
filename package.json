@@ -21,6 +21,8 @@
     "@angular/router": "^14.2.0",
     "firebase": "^9.12.1",
     "install": "^0.13.0",
+    "masonry-layout": "^4.2.2",
+    "ngx-masonry": "^13.0.0",
     "npm": "^8.19.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

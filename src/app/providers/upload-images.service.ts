@@ -17,6 +17,10 @@ export class UploadImagesService {
 
   }
 
+  // getImages() {
+  //   this.itemsCollection = afs.collection<Item>('items');
+  // }
+  
   loadImages(images: fileItemModel[]) {
     for (const item of images) {
       item.isUploading = true;

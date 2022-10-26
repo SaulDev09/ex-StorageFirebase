@@ -1,1 +1,21 @@
-<p>photos works!</p>
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let item of items | async">
+        <div class="card h-100">
+            <img class="card-img-top" [src]="item.url">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<ngx-masonry>
+    <div ngxMasonryItem class="masonry-item" *ngFor="let item of items | async">
+        <div class="card h-100">
+            <img class="card-img-top" [src]="item.url">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+            </div>
+        </div>
+    </div>
+</ngx-masonry>
